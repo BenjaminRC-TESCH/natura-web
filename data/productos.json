@@ -1,0 +1,42 @@
+[
+    {
+        "nombre": "Paz e Humor",
+        "image":"humor-paz",
+        "descripcion": "Fragancia relajante y fresca con un toque divertido, ideal para momentos de tranquilidad con un toque de alegría.",
+        "notas": [
+            "Notas cítricas",
+            "Toques de lavanda y almizcle"
+        ],
+        "precio": "600 MXN"
+    },
+    {
+        "nombre": "Homem Elo",
+        "image":"homem-elo",
+        "descripcion": "Una fragancia intensa y sofisticada que refleja la conexión del hombre con su entorno y su esencia interior.",
+        "notas": [
+            "Cedro",
+            "Ámbar especiado"
+        ],
+        "precio": "600 MXN"
+    },
+    {
+        "nombre": "Kaiak Vital",
+        "image":"kaiak-vital",
+        "descripcion": "Inspirada en la naturaleza y la vitalidad del agua, esta fragancia transmite energía y frescura.",
+        "notas": [
+            "Menta helada",
+            "Notas acuáticas y cítricas"
+        ],
+        "precio": "600 MXN"
+    },
+    {
+        "nombre": "Kaiak Oceano",
+        "image":"kaiak-oceano",
+        "descripcion": "Fragancia que evoca la profundidad y libertad del océano, con un carácter fresco y vibrante.",
+        "notas": [
+            "Algas marinas",
+            "Especias frías y maderas oceánicas"
+        ],
+        "precio": "600 MXN"
+    }
+]
