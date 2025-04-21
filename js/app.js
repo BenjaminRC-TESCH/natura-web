@@ -1,4 +1,4 @@
-import { crearDato, leerDatos, actualizarDatos, eliminarDatos } from './crud.js';
+import { initSwiper, crearDato, leerDatos, actualizarDatos, eliminarDatos } from './crud.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initApp();
@@ -8,36 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
 function initApp() {
     leerDatos();
 
-    document.getElementById('range').addEventListener('click', (e) => {
-        const myModal = new bootstrap.Modal(document.getElementById('modal-range'));
-        myModal.show();
-    });
-}
+    const toggleButton = document.getElementById('menuToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
 
-function initSwiper() {
-    new Swiper('.card__content', {
-        loop: true,
-        spaceBetween: 32,
-        grabCursor: true,
+    if (toggleButton && navbarMenu) {
+        toggleButton.addEventListener('click', () => {
+            navbarMenu.classList.toggle('open');
+        });
+    } else {
+        console.warn('No se encontró el menú o el botón del menú');
+    }
 
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            dynamicBullets: true,
-        },
-
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        breakpoints: {
-            600: {
-                slidesPerView: 2,
-            },
-            968: {
-                slidesPerView: 3,
-            },
-        },
-    });
+    const closeButton = document.getElementById('menuClosed');
+    if (closeButton && navbarMenu) {
+        closeButton.addEventListener('click', () => {
+            navbarMenu.classList.remove('open');
+        });
+    }
 }

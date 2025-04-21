@@ -4,17 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--=============== BOOTSTRAP ===============-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-            crossorigin="anonymous"></script>
-
-    <!--=============== REMIXICONS ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
-
-    <!--=============== CSS JS ===============-->
+    <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./css/styles.css">
 
     <!--=============== SWIPER CSS ===============-->
@@ -25,122 +15,128 @@
 <body>
 
     <!--=============== NAVIGATION BAR ===============-->
-    <div id="nav">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/"><img src="./assets/natura-logo.svg" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about-me">Sobre mí</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#my-products">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about-natura">Natura</a>
-                        </li>
-    
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <a href="./views/shop-cart.html"><img class="shop-cart" src="./assets/shop-cart.svg" alt=""></a>
-                    </form>
-                </div>
+    <div id="navigation__bar-container">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a class="navbar__logo" href="/"><img src="./assets/natura-log.png" alt=""></a>
+                <button class="navbar__collapse" id="menuToggle">☰</button>
+                
+                <ul class="navbar__list" id="navbarMenu">
+                    <button id="menuClosed" class="navbar__close-btn">✕</button>
+                    <li class="navbar__item"><a class="navbar__link" href="#about-me">Sobre mí</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#my-products">Productos</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#about-natura">Natura</a></li>
+                    <li class="navbar__item cart no-estilo">
+                        <a href="./views/shop-cart.html">
+                            <img class="navbar__cart" src="./assets/shop-cart.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
+
+    <!--================== ABOUT ME ==================-->
+    <div id="about-me" class="about__me-container">
+        <div class="about__me-row">
     
-    <!--=============== INFORMATION ABOUT ME ===============-->
-    <div id="about-me" class="container py-5">
-        <div class="row align-items-center">
-            
-            <div class="col-md-6 text-center text-md-start">
-                <h1 class="fw-bold">Hola, soy Fany, vendedora Natura</h1>
-                <p>Transformo belleza en bienestar, compartiendo productos que cuidan de ti y del planeta. Te acompaño a
+            <div class="about__me-col about__me-text">
+                <h1 class="about__me-title">Hola, soy Fany, vendedora Natura</h1>
+                <p class="about__me-description">
+                    Transformo belleza en bienestar, compartiendo productos que cuidan de ti y del planeta. Te acompaño a
                     descubrir el poder de la naturaleza a través de productos que inspiran bienestar, belleza y conciencia.
                 </p>
     
-    
-                <div class="social-icons d-flex gap-3 list-unstyled">
-                    <li><button id="range"><img src="./assets/rango.png" style="width: 50px;" alt=""></button></li>
-                    <li><a href=""><img src="./assets/facebook.svg" style="width: 50px;" alt="Facebook"></a></li>
-                    <li><a href=""><img src="./assets/whatsapp.svg" style="width: 50px;" alt="Facebook"></a></li>
-                </div>
-    
+                <ul class="about__me-social">
+                    <li><button id="range"><img src="./assets/medal-gold.svg" alt="Rango"></button></li>
+                    <li><a href="#"><img src="./assets/facebook.svg" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="./assets/whatsapp.svg" alt="WhatsApp"></a></li>
+                </ul>
             </div>
     
-            <!-- Imagen -->
-            <div class="col-md-6 d-flex justify-content-center mt-4 mt-md-0">
-                <div class="image-placeholder">
-                    <img src="./assets/user.jpg" alt="">
+            <div class="about__me-col about__me-image-container">
+                <div class="about__me-image-wrapper">
+                    <img src="./assets/user.jpg" alt="Fany">
                 </div>
             </div>
+    
         </div>
-    
-    
-        <div class="modal fade" id="modal-range" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <p>Actualmente, soy rango oro de Natura</p>
-                        <img src="./assets/rango.png" alt="rango natura">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
     </div>
 
-    <!--=============== PRODUCTS CARD ===============-->
-    <div id="my-products" class="products">
-
-        <h2>Mis productos</h2>
-
-        <div class="card__container swiper">
-            <div class="card__content">
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="card__article swiper-slide">
-                        <div class="card__image">
-                            <img src="./assets/productos/homem-elo.jpg" alt="image" class="card__img">
-                            <div class="card__shadow"></div>
-                        </div>
-                
-                        <div class="card__data">
-                            <h3 class="card__name"></h3>
-                            <p class="card__description"></p>
-                            
-                            <button class="card__button">Ver más</button>
+    <div id="my-products" class="products__container">
+        <div class="products__row">
+            <h2>Mis productos</h2>
+            
+            <div class="card__container swiper">
+                <div class="card__content">
+                    <div class="swiper-wrapper">
+                        <div class="card__article swiper-slide">
+                            <div class="card__image">
+                                <img src="./assets/productos/homem-elo.jpg" alt="image" class="card__img">
+                                <div class="card__shadow"></div>
+                            </div>
+            
+                            <div class="card__data">
+                                <h3 class="card__name"></h3>
+                                <p class="card__description"></p>
+                                <button class="card__button">Ver más</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+            
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-        
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        
+            
+            <button class="products__all">Ver todos</button>
         </div>
     </div>
 
-    <!--=============== NATURA ABOUT INFORMATION ===============-->
-    <div id="about-natura" class="">
-        
+    <div id="about-natura" class="about__natura-container">
+        <div class="about__row">
+            <h2>¡Un poco sobre Natura!</h2>
+            <p class="about__natura-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vero quas ullam maxime
+                repellendus itaque. Odio voluptatem ducimus placeat iste suscipit vitae id saepe natus, consectetur accusantium,
+                facilis, optio aliquam.</p>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__section">
+                <h4>Sobre mí</h4>
+                <p>Soy Fany, vendedora Natura. Promuevo el bienestar y la belleza con conciencia ambiental.</p>
+            </div>
     
-    <!--=============== SWIPER JS ===============-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <div class="footer__section">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="#">Correo: fany@natura.com</a></li>
+                    <li><a href="#">WhatsApp: +52 123 456 7890</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer__section">
+                <h4>Sígueme</h4>
+                <div class="footer__social">
+                    <a href="#"><img src="./assets/facebook.svg" alt="Facebook" /></a>
+                    <a href="#"><img src="./assets/whatsapp.svg" alt="WhatsApp" /></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer__bottom">
+            <p>&copy; 2025 Fany Natura. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 
     <!--=============== APP JS ===============-->
     <script type="module" src="js/app.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
 </body>
 </html>
