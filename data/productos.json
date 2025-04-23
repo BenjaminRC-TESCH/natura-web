@@ -7,7 +7,7 @@
             "Notas cítricas",
             "Toques de lavanda y almizcle"
         ],
-        "precio": "600 MXN"
+        "precio": "600"
     },
     {
         "nombre": "Homem Elo",
@@ -17,7 +17,7 @@
             "Cedro",
             "Ámbar especiado"
         ],
-        "precio": "600 MXN"
+        "precio": "600"
     },
     {
         "nombre": "Kaiak Vital",
@@ -27,7 +27,7 @@
             "Menta helada",
             "Notas acuáticas y cítricas"
         ],
-        "precio": "600 MXN"
+        "precio": "600"
     },
     {
         "nombre": "Kaiak Oceano",
@@ -37,6 +37,6 @@
             "Algas marinas",
             "Especias frías y maderas oceánicas"
         ],
-        "precio": "600 MXN"
+        "precio": "600"
     }
 ]

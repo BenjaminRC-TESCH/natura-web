@@ -1,0 +1,139 @@
+.cart__container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cart__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cart__section {
+    flex: 2;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+.cart__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart__product-count {
+    color: #888;
+}
+
+.cart__items {
+    margin-top: 20px;
+}
+
+.cart__back-to-shop a {
+    text-decoration: none;
+    color: #007bff;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.cart__summary {
+    flex: 1;
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cart__summary-items {
+    margin: 20px 0;
+}
+
+.cart__total-row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+.cart__pay-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart__item {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart__item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cart__item-details {
+    flex: 2;
+    min-width: 150px;
+}
+
+.cart__item-category {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.cart__item-name {
+    font-weight: bold;
+}
+
+.cart__item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
+}
+
+.cart__item-controls button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.cart__item-price,
+.cart__item-unit,
+.cart__item-remove {
+    flex: 1;
+    text-align: center;
+}
+
+.cart__remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 1.2rem;
+}
+
+.cart__summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart__summary-name {
+    font-size: 1rem;
+}
+
+.cart__summary-price {
+    font-size: 1rem;
+    text-align: right;
+}

@@ -4,53 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--=============== BOOTSTRAP ===============-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
-    
-    <!--=============== REMIXICONS ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
-    
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/cart.css">
 
     <title>Carrito</title>
 </head>
-<body>
+<body >
 
     <!--=============== NAVIGATION BAR ===============-->
-    <div id="nav">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/"><img src="../assets/natura-logo.svg" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sobremi">Sobre mí</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#misproductos">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#natura">Natura</a>
-                        </li>
-    
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <a href="./shop-cart.html"><img class="shop-cart" src="../assets/shop-cart.svg" alt=""></a>
-                    </form>
-                </div>
+    <div id="navigation__bar-container">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a class="navbar__logo" href="/"><img src="../assets/natura-log.png" alt=""></a>
+                <button class="navbar__collapse" id="menuToggle">☰</button>
+                <ul class="navbar__list" id="navbarMenu">
+                    <button id="menuClosed" class="navbar__close-btn">✕</button>
+                    <li class="navbar__item"><a class="navbar__link" href="../index.html#about-me">Sobre mí</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="../index.html#my-products">Productos</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="../index.html#about-natura">Natura</a></li>
+                </ul>
             </div>
         </nav>
     </div>
+
+    <div class="cart__container">
+        <div class="cart__content">
+    
+            <!-- Carrito -->
+            <section class="cart__section">
+                <div class="cart__title">
+                    <h4><b>Carrito de compras</b></h4>
+                    <span class="cart__product-count" id="productCount"></span>
+                </div>
+    
+                <div id="cartItemsContainer" class="cart__items"></div>
+    
+                <div class="cart__back-to-shop">
+                    <a href="../index.html">⬅ Regresar</a>
+                </div>
+            </section>
+    
+            <!-- Resumen -->
+            <aside class="cart__summary">
+                <h5><b>Resumen</b></h5>
+                <hr />
+                <div id="summaryItems" class="cart__summary-items"></div>
+                <div class="cart__total-row">
+                    <span class="cart__total-label">TOTAL</span>
+                    <span class="cart__total-price" id="totalPrice"></span>
+                </div>
+                <button class="cart__pay-btn" onclick="pagar()">PAGAR</button>
+            </aside>
+    
+        </div>
+    </div>
+
+    <script src="../js/all-products.js"></script>
     
 </body>
 </html>

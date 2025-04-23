@@ -7,6 +7,10 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap");
 
+.body-no-scroll {
+    overflow: hidden;
+}
+
 /*=============== VARIABLES CSS ===============*/
 :root {
     /*========== Colors ==========*/
@@ -15,12 +19,15 @@
     --orange: #f07951;
     --blue: #335ccf;
     --navbar: #F8B195;
+    --gray: #808080;
 
     --first: #F8B195;
     --second: #F67280;
     --third: #C06C84;
     --fourth: #6C5B7B;
     --fiveth: #355C7D;
+
+
 
     /*========== Font and typography ==========*/
     /*.5rem = 8px | 1rem = 16px ...*/
@@ -127,7 +134,19 @@ body {
     height: 24px;
 }
 
-@media (max-width: 550px) {
+#navbar__cart-length {
+    position: relative;
+    top: 5px;
+    right: 40px;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
     .navbar__collapse {
         display: block;
     }
@@ -135,9 +154,17 @@ body {
     .navbar__close-btn {
         display: block;
     }
+
+    #navbar__cart-length {
+
+        background-color: var(--first);
+        /* Color de fondo del círculo */
+        color: var(--black);
+
+    }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
     .navbar__collapse {
         display: block !important;
     }
@@ -161,7 +188,7 @@ body {
         top: 0 !important;
         right: -100% !important;
         height: 100vh !important;
-        width: 100vw !important;
+        width: 250px !important;
         color: var(--black) !important;
         background-color: var(--white) !important;
         flex-direction: column !important;
@@ -211,6 +238,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+
     margin: 0 auto;
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -224,6 +252,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     max-width: 1140px;
+    height: 100vh;
     margin: 0 auto;
 }
 
@@ -274,16 +303,115 @@ body {
 .about__me-image-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* para centrar verticalmente si es necesario */
 }
 
 .about__me-image-wrapper img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 8px;
+
     /*mask-image: linear-gradient(var(--black) 90%, transparent);*/
 }
 
-@media (min-width: 768px) {
+/*IMAGE ANIMATION*/
+.about__me-image-wrapper {
+    position: relative;
+    display: flex;
+    /* cambio aquí */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* puedes ajustar esto si quieres controlar el ancho */
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkleAnim 3s infinite;
+}
+
+.sparkle1 {
+    top: -10px;
+    left: 30%;
+    animation-delay: 5s;
+}
+
+.sparkle2 {
+    bottom: -10px;
+    right: 20%;
+    animation-delay: 2.5s;
+}
+
+.sparkle3 {
+    top: 20%;
+    right: -10px;
+    animation-delay: 2s;
+}
+
+.sparkle4 {
+    bottom: 25%;
+    left: -10px;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkleAnim {
+
+    0%,
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+}
+
+/*TEXT ANIMATION*/
+.typewriter::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+    color: var(--first);
+    /* o el color que uses */
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Nueva clase que detiene la animación y oculta el cursor */
+.no-cursor::after {
+    animation: none;
+    opacity: 0;
+    content: '|';
+
+}
+
+/*MEDIA*/
+
+@media (max-width: 880px) {
+    .about__me-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 782px) {
     .about__me-container {
         height: 100vh;
         display: flex;
@@ -332,11 +460,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.8rem;
 }
 
 .card__content {
     margin-inline: 1.75rem;
     overflow: hidden;
+
 }
 
 .card__article {
@@ -394,6 +524,11 @@ body {
     color: var(--white-color);
 }
 
+.card__price {
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
 /*Buttons One Product*/
 .card__button {
     display: inline-block;
@@ -404,6 +539,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     border: none;
+    transition: 0.5s ease;
 }
 
 .card__button:hover {
@@ -412,7 +548,7 @@ body {
 }
 
 /*Button to see all products*/
-.products__all {
+#products__all {
     background-color: var(--black);
     border: none;
     color: var(--white);
@@ -420,11 +556,11 @@ body {
     cursor: pointer;
     border-radius: .25rem;
     margin-top: 1.25rem;
-
+    transition: 0.5s ease;
 }
 
-.products__all:hover {
-    background-color: var(--blue);
+#products__all:hover {
+    background-color: var(--third);
     color: var(--white);
 }
 
@@ -492,6 +628,98 @@ body {
     }
 }
 
+
+#products__btn-modal {
+    display: none;
+}
+
+.products__container-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#products__btn-modal:checked~.products__container-modal {
+    display: flex;
+}
+
+.products__content-modal {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+
+    box-shadow: 0 4px 8px 0 var(--gray), 0 6px 20px 0 var(--gray);
+}
+
+#modal-add-cart {
+    width: 40px;
+    color: var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    border: none;
+    background-color: var(--white);
+}
+
+.products__content-modal h2 {
+    margin-bottom: 15px;
+}
+
+.products__content-modal p {
+    padding: 15px 0px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    text-align: center;
+}
+
+.products__content-modal img {
+    max-width: 100%;
+}
+
+.products__content-modal .products__btn-cerrar {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.products__content-modal .products__btn-cerrar label {
+    padding: 7px 10px;
+    background-color: #5488a3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.products__content-modal .products__btn-cerrar label:hover {
+    background-color: #185E83;
+}
+
+.products__cerrar-modal {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+@media screen and (max-width:800px) {
+    .content-modal {
+        width: 90%;
+    }
+}
+
 /*=============== ABOUT NATURA ===============*/
 .about__natura-container {
     text-align: center;
@@ -507,6 +735,10 @@ body {
 .about__row {
     max-width: 1140px;
     margin: 0 auto;
+}
+
+.about__row h2 {
+    font-size: 1.8rem;
 }
 
 .about__natura-container p {

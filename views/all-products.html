@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/products.css">
+
+    <title>Mis Productos</title>
+</head>
+
+<body data-page="all-products">
+
+    <!--=============== NAVIGATION BAR ===============-->
+    <div id="navigation__bar-container">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a class="navbar__logo" href="/"><img src="../assets/natura-log.png" alt=""></a>
+                <button class="navbar__collapse" id="menuToggle">☰</button>
+    
+                <ul class="navbar__list" id="navbarMenu">
+                    <button id="menuClosed" class="navbar__close-btn">✕</button>
+                    <li class="navbar__item"><a class="navbar__link" href="#about-me">Sobre mí</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#my-products">Productos</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#about-natura">Natura</a></li>
+                    <li class="navbar__item cart no-estilo">
+                        <a href="../views/shop-cart.html">
+                            <img class="navbar__cart" src="../assets/shop-cart.svg" alt="">
+                        </a>
+                        <span id="navbar__cart-length"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!--=============== showll all products ===============-->
+    <div class="product__container" id="product-cards">
+        <h1>Productos</h1>
+        <div class="product__grid">
+            <div class="product__card" *ngFor="let product of products">
+                <div class="product__card-shop product__animated-card">
+                    <img [src]="'http://localhost:3000/uploads/' + product.imagen" class="product__img">
+                    <div class="product__body">
+                        <h3 class="product__name">{{ product.nombre }}</h3>
+                        <p class="product__description">{{ product.descripcion }}</p>
+                        <h5 class="product__price">$ {{ product.precio }}</h5>
+                        <button type="button" class="product__button">
+                            Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/all-products.js"></script>
+    
+
+</body>
+</html>

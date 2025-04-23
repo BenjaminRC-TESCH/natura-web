@@ -12,7 +12,7 @@
 
     <title>Natura</title>
 </head>
-<body>
+<body data-page="index">
 
     <!--=============== NAVIGATION BAR ===============-->
     <div id="navigation__bar-container">
@@ -30,6 +30,7 @@
                         <a href="./views/shop-cart.html">
                             <img class="navbar__cart" src="./assets/shop-cart.svg" alt="">
                         </a>
+                        <span id="navbar__cart-length"></span>
                     </li>
                 </ul>
             </div>
@@ -41,7 +42,9 @@
         <div class="about__me-row">
     
             <div class="about__me-col about__me-text">
-                <h1 class="about__me-title">Hola, soy Fany, vendedora Natura</h1>
+                <h1 class="about__me-title">
+                    <span class="typewriter" id="typewriter-text"></span>
+                </h1>
                 <p class="about__me-description">
                     Transformo belleza en bienestar, compartiendo productos que cuidan de ti y del planeta. Te acompaño a
                     descubrir el poder de la naturaleza a través de productos que inspiran bienestar, belleza y conciencia.
@@ -56,13 +59,19 @@
     
             <div class="about__me-col about__me-image-container">
                 <div class="about__me-image-wrapper">
-                    <img src="./assets/user.jpg" alt="Fany">
+                    <img src="./assets/natura-logo.png" alt="Fany">
+                    <!-- Chispitas -->
+                    <span class="sparkle sparkle1"></span>
+                    <span class="sparkle sparkle2"></span>
+                    <span class="sparkle sparkle3"></span>
+                    <span class="sparkle sparkle4"></span>
                 </div>
             </div>
     
         </div>
     </div>
 
+    <!--================== PRODUCTS ==================-->
     <div id="my-products" class="products__container">
         <div class="products__row">
             <h2>Mis productos</h2>
@@ -78,7 +87,7 @@
             
                             <div class="card__data">
                                 <h3 class="card__name"></h3>
-                                <p class="card__description"></p>
+                                <p class="card__price"></p>
                                 <button class="card__button">Ver más</button>
                             </div>
                         </div>
@@ -89,19 +98,47 @@
                 <div class="swiper-button-next"></div>
             </div>
             
-            <button class="products__all">Ver todos</button>
+            <button id="products__all">Ver todos</button>
+        </div>
+        <input type="checkbox" id="products__btn-modal">
+        <div class="products__container-modal">
+            <div class="products__content-modal">
+                <h2 id="modal-title">¡Bienvenido!</h2>
+                <img id="modal-image" src="" alt="">
+                <p id="modal-description">Descripción del producto</p>
+                <p id="modal-price">Precio del producto</p>
+                <div class="products__btn-cerrar">
+                    <label for="products__btn-modal">Cerrar</label>
+                </div>
+                <button id="modal-add-cart"><img src="./assets/shop-cart.svg" alt=""></button>
+            </div>
+            <label for="products__btn-modal" class="cerrar-modal"></label>
         </div>
     </div>
 
+    <!--================ ABOUT NATURA ================-->
     <div id="about-natura" class="about__natura-container">
         <div class="about__row">
             <h2>¡Un poco sobre Natura!</h2>
-            <p class="about__natura-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vero quas ullam maxime
-                repellendus itaque. Odio voluptatem ducimus placeat iste suscipit vitae id saepe natus, consectetur accusantium,
-                facilis, optio aliquam.</p>
+            <p class="about__natura-text">
+                Natura es una marca que encuentra su esencia en los aromas y riquezas del entorno natural. Cada uno de sus productos
+                está cuidadosamente elaborado con ingredientes inspirados en la biodiversidad, especialmente de la Amazonía,
+                transformando olores naturales en experiencias sensoriales únicas. Desde notas cítricas frescas hasta fragancias
+                amaderadas y florales, sus líneas evocan la conexión profunda con la tierra.
+            </p>
+            <p>
+                Además de ofrecer cosméticos de alta calidad, Natura se distingue por su fuerte compromiso ambiental. La marca apuesta
+                por prácticas sostenibles, como el uso de envases reciclables, fórmulas con ingredientes naturales y procesos que
+                respetan tanto al planeta como a las comunidades locales. Su modelo de negocio promueve el biocomercio ético,
+                contribuyendo a la conservación de los ecosistemas y al desarrollo social de las regiones donde opera.
+            </p>
+            <p>
+                Natura no solo cuida tu piel, sino también el mundo que nos rodea.
+            </p>
         </div>
     </div>
 
+    <!--=================== FOOTER ===================-->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__section">

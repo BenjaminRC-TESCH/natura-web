@@ -1,0 +1,134 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap");
+
+.body-no-scroll {
+    overflow: hidden;
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    --white: #fff;
+    --black: #000;
+    --orange: #f07951;
+    --blue: #335ccf;
+    --navbar: #F8B195;
+    --gray: #808080;
+
+    --first: #F8B195;
+    --second: #F67280;
+    --third: #C06C84;
+    --fourth: #6C5B7B;
+    --fiveth: #355C7D;
+
+
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+}
+
+/*=============== BASE ===============*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--black);
+}
+
+.product__container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.product__container h1 {
+    margin-bottom: 20px;
+}
+
+.product__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product__card {
+    flex: 1 1 200px;
+    max-width: 350px;
+    padding: 15px 0;
+}
+
+.product__card-shop {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.product__img {
+    display: block;
+    height: 200px;
+    width: 100%;
+    object-fit: scale-down;
+    border-radius: 10px 10px 0 0;
+    margin: 0 auto;
+}
+
+.product__body {
+    padding: 15px;
+    text-align: center;
+}
+
+.product__body h3 {
+    letter-spacing: 3px;
+    color: #1c1c50;
+
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.product__body p {
+
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.product__body h5 {
+    margin: 10px 0;
+    color: #1c1c50;
+}
+
+.product__button {
+    display: block;
+    margin: 20px auto 0 auto;
+    background-color: var(--first);
+    color: var(--black);
+    padding: .75rem 1.5rem;
+    border-radius: .25rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s ease;
+
+}
+
+.product__button:hover {
+    background-color: var(--fiveth);
+    color: white;
+}
+
+.product__animated-card {
+    transition: transform 0.3s ease;
+}
+
+.product__animated-card:hover {
+    transform: scale(1.05);
+}
